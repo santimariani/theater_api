@@ -1,51 +1,176 @@
-.trapezoid {
+:root {
+    --chairWidthOne: 25vh;
+    --chairWidthTwo: 20vh;
+    --chairWidthThree: 15vh;
+    --chairWidthFour: 10vh;
+    --chairWidthAllCenter: 100vh;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#curtain {
+    width: 40vw;
+    height: 50vh;
+    background: linear-gradient(90deg, 
+        #923232 25%, 
+        #000000 50%, 
+        #343030 60%, 
+        #982f2f 95%);
+    background-size: 1vw 100%;
+    box-shadow: 
+        inset 0 -10px 10px rgba(0, 0, 0, 0.5),
+        inset 0 20px 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+}
+
+.seatingRug {
+    margin: 0 auto;
+    border-bottom: 2vh solid #000000;
+    background-color: rgba(185, 86, 86);
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 1;
+}
+
+#theaterSpace {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr .3fr 2.5fr 1fr; 
+    overflow: hidden;
+    background-color: beige;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+}
+
+#seatingArea {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    position: relative;
+}
+
+#stepArea {
+    display: grid;
+    grid-template-columns: auto var(--chairWidthOne) var(--chairWidthAllCenter) var(--chairWidthOne) auto; 
+    transform: translateY(-10vh)
+}
+
+.step {
+    background-color: #292828;
+    border: 1hv solid black;
+    box-sizing: border-box;
+}
+
+#walkingArea {
+}
+
+#stageArea {
+    border: rgb(0, 0, 0) solid 1vh; 
+    background-color: rgb(31, 30, 30); 
+}
+
+#firstRow {
+    display:grid; 
+    grid-template-columns: 1fr var(--chairWidthOne) auto var(--chairWidthOne) 1fr; 
+    transform: translateY(-80%);
+}
+
+#secondRow {
+    display:grid; 
+    grid-template-columns: 1fr var(--chairWidthTwo) auto var(--chairWidthTwo) 1fr; 
+    transform: translateY(-60%);
+}
+
+#thirdRow {
+    display:grid; 
+    grid-template-columns: 1fr var(--chairWidthThree) auto var(--chairWidthThree) 1fr; 
+    transform: translateY(-40%);
+}
+
+#fourthRow {
+    display:grid; 
+    grid-template-columns: 1fr var(--chairWidthFour) auto var(--chairWidthFour) 1fr; 
+    transform: translateY(-20%);
+}
+
+.chairGroupLeft {
+    display: flex;
+    justify-content: flex-end;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.chairGroupCenter {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.chairGroupRight {
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.firstRowChair {
+    width: var(--chairWidthOne);
+    display:inline-block;
+}
+
+.secondRowChair {
+    width: var(--chairWidthTwo);
+    display:inline-block;
+}
+
+.thirdRowChair {
+    width: var(--chairWidthThree);
+    display:inline-block;
+}
+
+.fourthRowChair {
+    width: var(--chairWidthFour);
+    display:inline-block;
+
+}
+
+
+
+#centerRug {
     width: 108vh;
     height: 36vh;
-    margin: 0 auto; /* Center horizontally */
-    display: flex;
-    border-bottom: 2vh solid #000000;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(185, 86, 86);
     clip-path: polygon(35% 0%, 0% 100%, 100% 100%, 65% 0%);
 }
 
-
-/* .trapezoid::after { 
-    content: ""; 
-    width: 108vh; 
-    height: 36vh; 
-    position: absolute; 
-    background-color: rgba(185, 86, 86);
-    z-index: 3;
-    clip-path: polygon(35% 0%, 0% 100%, 100% 100%, 65% 0%); */
-
-
-
-
-.trapezoidInvertedLEFT {
+#leftRug {
     width: 162vh;
     height: 38vh;
-    border-bottom: 2vh solid black; /* Apply border to the bottom */
-    background-color: rgba(185, 86, 86);
-    position: relative;
-    margin: 0 auto; /* Center horizontally */
     clip-path: polygon(75% 0%, 0% 100%, 65% 100%, 100% 0%);
-    box-sizing: border-box;
 }
 
-.trapezoidInvertedRIGHT {
+#rightRug {
     width: 162vh;
     height: 38vh;
-    border-bottom: 2vh solid black; /* Apply border to the bottom */
-    background-color: rgba(185, 86, 86);
-    position: relative;
-    margin: 0 auto; /* Center horizontally */
     clip-path: polygon(0% 0%, 35% 100%, 100% 100%, 25% 0%);
-    box-sizing: border-box;
 }
 
-.spinningBall {
+
+
+#spinningBall {
     animation: spinBall 1.5s linear infinite;
 }
 
@@ -63,16 +188,3 @@
     display: ;
 }
 
-.curtain {
-    width: 40vw;
-    height: 50vh;
-    background: linear-gradient(90deg, 
-        #923232 25%, 
-        #000000 50%, 
-        #343030 60%, 
-        #982f2f 95%);
-    background-size: 1vw 100%;
-    box-shadow: 
-        inset 0 -10px 10px rgba(0, 0, 0, 0.5),
-        inset 0 20px 10px rgba(0, 0, 0, 0.5);
-}
