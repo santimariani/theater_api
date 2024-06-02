@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theater</title>
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body style=" margin:0%; height: 100%; display: flex; justify-content: center; overflow: hidden; background-color: beige; position: relative;">
+    <div style="display:grid; grid-template-rows: auto auto auto; height: 20%; position: relative; z-index:2">
+        <div style="display:grid; grid-template-columns: 1fr auto 1fr; transform: translateY(-20%)">
+            <div style="white-space: nowrap; overflow: hidden; display: flex; justify-content: flex-end; position: relative; left: -20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+            </div>
+            <div style="display: flex; justify-content: center">
+                <img src="chair.svg" style="width: 20vh; display:inline-block">
+                <img src="chair.svg" style="width: 20vh; display:inline-block">
+                <img src="chair.svg" style="width: 20vh; display:inline-block">
+            </div>
+            <div style="white-space: nowrap; overflow: hidden; display: flex; justify-content: flex-start; position: relative; left: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+            </div>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr auto 1fr; transform: translateY(-40%)">
+            <div style="white-space: nowrap; overflow: hidden; display: flex; justify-content: flex-end; position: relative; left: -20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+            </div>
+            <div style="display: flex; justify-content: center">
+                <img src="chair.svg" style="width: 20vh; display:inline-block">
+                <img src="chair.svg" style="width: 20vh; display:inline-block">
+
+            </div>
+            <div style="white-space: nowrap; overflow: hidden; display: flex; justify-content: flex-start; position: relative; left: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+            </div>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr auto 1fr; transform: translateY(-60%)">
+            <div style="white-space: nowrap; overflow: hidden; display: flex; justify-content: flex-end; position: relative; left:-20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+            </div>
+            <div style="display: flex; justify-content: center">
+                <img src="chair.svg" style="width: 20vh; display:inline-block">
+            </div>
+            <div style="white-space: nowrap; overflow: hidden; display: flex; justify-content: flex-start; position: relative; left: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+                <img src="chair.svg" style="width: 20vh">
+            </div>
+        </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; position: absolute; z-index:1">
+        <div class="trapezoidInvertedLEFT"; style="overflow: hidden; display: flex; position: absolute; left: -180vh"></div>
+        <div class="trapezoid" style="display: flex; position: absolute; left: -40vh"></div>
+        <div class="trapezoidInvertedRIGHT"; style="overflow: hidden; display: flex; position: absolute; right: -180vh"></div>
+    </div>
+    <div style="border: rgb(0, 0, 0) solid 1vh; background-color: rgb(31, 30, 30); width: 100vw; height: 15vh; position: absolute; left: 50%; top: 200%; overflow: hidden; transform: translate(-50%); z-index:3"></div>
+    <div style="border: black solid 1vh; background-color: rgba(255, 255, 255, 0.759); width: 80vw; height: 75vh; position: absolute; left: 50%; top: 120%; transform: translate(-50%,-50%); z-index:4"></div>
+    <figure style="position: absolute; left: 10%; top: 155%; z-index:5; text-align: center; font-weight: bolder; color:aliceblue">
+        <img src="reel.svg" style="height: 25vh; width: auto;"" class="spinningBall" id="spinningBall">
+        <figcaption>CLICK ME!</figcaption>
+    <figure style="position: absolute; left: 530%; bottom: -8%; z-index:6; text-align: center; font-weight: bolder; color:aliceblue">
+        <img src="popcorn.svg" style="height: 25vh; width: auto;">
+        <figcaption>CLICK ME!</figcaption>
+    <script src="./JS/script.js"></script>
+    <audio id="spinningSound" loop>
+        <source src="spinningWheel.flac" type="audio/mpeg">
+</body>
+</html>

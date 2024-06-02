@@ -1,0 +1,50 @@
+.trapezoid {
+    width: 80vh;
+    height: 37vh;
+    border: .5vh solid black;
+    background-color: rgba(185, 86, 86, 0.584);
+    position: relative;
+    margin: 0 auto; /* Center horizontally */
+    clip-path: polygon(40% 100%, 60% 100%, 100% 0%, 0% 0%);
+    box-sizing: border-box;
+}
+
+.trapezoidInvertedLEFT {
+    width: 155vh;
+    height: 37vh;
+    border: .5vh solid black;
+    background-color: rgba(185, 86, 86, 0.584);
+    position: relative;
+    margin: 0 auto; /* Center horizontally */
+    clip-path: polygon(20% 100%, 100% 100%, 80% 0%, 0% 0%);
+    box-sizing: border-box;
+}
+
+.trapezoidInvertedRIGHT {
+    width: 155vh;
+    height: 37vh;
+    border: .5vh solid black;
+    background-color: rgba(185, 86, 86, 0.584);
+    position: relative;
+    margin: 0 auto; /* Center horizontally */
+    clip-path: polygon(0% 100%, 80% 100%, 100% 0%, 20% 0%);
+    box-sizing: border-box;
+}
+
+.spinningBall {
+    animation: spinBall 1.5s linear infinite;
+}
+
+@keyframes spinBall {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.off {
+    displayEight.style.display = 'none';
+}
+
+.on {
+    display: ;
+}
