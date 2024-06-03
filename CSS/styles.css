@@ -3,15 +3,14 @@
     --chairWidthTwo: 20vh;
     --chairWidthThree: 15vh;
     --chairWidthFour: 10vh;
-    --chairWidthAllCenter: 100vh;
+    --chairWidthAllCenter: 108vh;
 }
 
 body {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    background-color: beige;
+    overflow: hidden;
 }
 
 .flexCenter {
@@ -35,41 +34,44 @@ body {
     position: absolute;
 }
 
+#rugArea {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
 .seatingRug {
-    margin: 0 auto;
-    border-bottom: 2vh solid #000000;
+    margin: 0;
+    border-bottom: 1.5vh solid rgb(235, 235, 157);
     background-color: rgba(185, 86, 86);
     box-sizing: border-box;
-    position: absolute;
-    z-index: 1;
 }
 
 #theaterSpace {
     margin: 0;
-    height: 100vh;
     display: grid;
+    height: 100vh;
     grid-template-rows: 2fr .3fr 2.5fr 1fr; 
     overflow: hidden;
-    background-color: beige;
     position: absolute;
     top: 50%;
     z-index: 2;
+    /* why is this not needed? */
 }
 
 #seatingArea {
     display: grid;
     grid-template-rows: auto auto auto auto;
-    position: relative;
 }
 
 #stepArea {
     display: grid;
-    grid-template-columns: auto var(--chairWidthOne) var(--chairWidthAllCenter) var(--chairWidthOne) auto; 
-    transform: translateY(-10vh)
+    grid-template-columns: var(--chairWidthAllCenter) var(--chairWidthOne) var(--chairWidthAllCenter) var(--chairWidthOne) var(--chairWidthAllCenter); 
+    transform: translateY(-11.15vh);
 }
 
 .step {
-    background-color: #292828;
+    background-color: #000000;
     border: 1hv solid black;
     box-sizing: border-box;
 }
@@ -80,6 +82,9 @@ body {
 #stageArea {
     border: rgb(0, 0, 0) solid 1vh; 
     background-color: rgb(31, 30, 30); 
+    transform: translateY(25%);
+    z-index: 1;
+    /* why do I have to do this? */
 }
 
 #firstRow {
@@ -145,39 +150,32 @@ body {
 .fourthRowChair {
     width: var(--chairWidthFour);
     display:inline-block;
-
 }
-
-
 
 #centerRug {
     width: 108vh;
-    height: 36vh;
+    height: 38vh;
     clip-path: polygon(35% 0%, 0% 100%, 100% 100%, 65% 0%);
+    position: absolute;
+
 }
 
 #leftRug {
     width: 162vh;
     height: 38vh;
-    clip-path: polygon(75% 0%, 0% 100%, 65% 100%, 100% 0%);
+    clip-path: polygon(75% 0%, 0% 100%, 65% 100%, 100.5% 0%);
+    position: absolute;
+    transform: translateX(-64%);
+    /* cheating - this doesn't work */
 }
 
 #rightRug {
     width: 162vh;
     height: 38vh;
-    clip-path: polygon(0% 0%, 35% 100%, 100% 100%, 25% 0%);
-}
-
-
-
-#spinningBall {
-    animation: spinBall 1.5s linear infinite;
-}
-
-@keyframes spinBall {
-    100% {
-        transform: rotate(360deg);
-    }
+    clip-path: polygon(-.5% 0%, 35% 100%, 100% 100%, 25% 0%);
+    position: absolute;
+    transform: translateX(64%);
+    /* cheating - this doesn't work */
 }
 
 .off {
@@ -185,6 +183,59 @@ body {
 }
 
 .on {
-    display: ;
+    display:
 }
 
+#screen {
+    width: 80vw; 
+    height: 75vh; 
+    border: black solid 1vh; 
+    background-color: rgba(255, 255, 255, 0.759); 
+    position: absolute; 
+    left: 50%; 
+    top: 100%; 
+    transform: translate(-50%, 10%); 
+    /* why do I need the 100% top and 10%? */
+    z-index: 2;
+}
+
+#reelFigure {
+    position: absolute; 
+    top: 65vh;
+    left: 15vh;
+    z-index: 3; 
+    text-align: center; 
+    font-weight: bolder; 
+    color:aliceblue;
+}
+
+#reelSVG {
+    height: 25vh; 
+    width: auto;
+}
+
+.spinningReel {
+    animation: spinReel 1.5s linear infinite;
+
+}
+
+@keyframes spinReel {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#popcornFigure {
+    position: absolute; 
+    right: 15vh; 
+    top: 65vh; 
+    z-index: 3;
+    text-align: center; 
+    font-weight: bolder; 
+    color:aliceblue
+}
+
+#popcornSVG {
+    height: 25vh; 
+    width: auto;
+}

@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 <body class="flexCenter">
+
+    <div id="rugArea">
+        <div id="centerRug" class="seatingRug"></div> 
+        <div id="leftRug" class="seatingRug"></div>
+        <div id="rightRug" class="seatingRug"></div>
+    </div>
+
     <div id="theaterSpace">
         <div id="seatingArea">
             <div id="fourthRow">
@@ -109,22 +116,20 @@
         </div>
         <div id="stageArea">
         </div>    
-    <div id="centerRug" class="seatingRug"></div>
+    </div>
 
-    <!-- <div id="leftRug" class="seatingRug"></div> -->
-    <!-- <div style="border: black solid 1vh; background-color: rgba(255, 255, 255, 0.759); width: 80vw; height: 75vh; position: absolute; left: 50%; top: 100%; transform: translate(-50%,-50%); z-index:6"></div>
-    <figure style="position: absolute; left: 5%; top: 135%; z-index:6; text-align: center; font-weight: bolder; color:aliceblue">
-        <img src="reel.svg" style="height: 25vh; width: auto;" class="spinningBall" id="spinningBall">
+    <div id="screen"></div>
+
+    <figure id="reelFigure">
+        <img src="reel.svg" id="reelSVG" class="spinningReel">
         <figcaption>CLICK ME!</figcaption>
-    <figure style="position: absolute; left: 530%; bottom: -8%; z-index:; text-align: center; font-weight: bolder; color:aliceblue">
-        <img src="popcorn.svg" style="height: 25vh; width: auto;">
-        <figcaption>CLICK ME!</figcaption> -->
+    </figure>
+
+    <figure id="popcornFigure">
+        <img src="popcorn.svg" id="popcornSVG">
+        <figcaption>REFRESH!</figcaption>
     <script src="./JS/script.js"></script>
+    </figure>
+    
 </body>
 </html>
-
-    <!-- <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; position: absolute; z-index:3">
-        <div class="trapezoidInvertedLEFT"; style="overflow: hidden; display: flex; position: absolute; left: -182vh"></div>
-        <div class="trapezoid" style="display: flex; position: absolute; left: -55vh"></div>
-        <div class="trapezoidInvertedRIGHT"; style="overflow: hidden; display: flex; position: absolute; right: -182vh"></div>
-    </div> -->
