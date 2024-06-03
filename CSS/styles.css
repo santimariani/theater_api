@@ -24,21 +24,6 @@ body {
     align-items: center;
 }
 
-#curtain {
-    width: 40vw;
-    height: 50vh;
-    background: linear-gradient(90deg, 
-        #923232 25%, 
-        #000000 50%, 
-        #343030 60%, 
-        #982f2f 95%);
-    background-size: 1vw 100%;
-    box-shadow: 
-        inset 0 -10px 10px rgba(0, 0, 0, 0.5),
-        inset 0 20px 10px rgba(0, 0, 0, 0.5);
-    position: absolute;
-}
-
 #rugArea {
     display: flex;
     overflow: hidden;
@@ -53,6 +38,35 @@ body {
     
 }
 
+#centerRug {
+    width: 108vh;
+    height: 38vh;
+    clip-path: polygon(35% 0%, 0% 100%, 100% 100%, 65% 0%);
+    position: absolute;
+    transition: opacity 3s, visibility 3s;
+}
+
+#leftRug {
+    width: 162vh;
+    height: 38vh;
+    clip-path: polygon(75% 0%, 0% 100%, 65% 100%, 100.5% 0%);
+    position: absolute;
+    transform: translateX(-64%);
+    transition: opacity 3s, visibility 3s;
+
+    /* cheating - this doesn't work */
+}
+
+#rightRug {
+    width: 162vh;
+    height: 38vh;
+    clip-path: polygon(-.5% 0%, 35% 100%, 100% 100%, 25% 0%);
+    position: absolute;
+    transform: translateX(64%);
+    transition: opacity 3s, visibility 3s;
+    /* cheating - this doesn't work */
+}
+
 #theaterSpace {
     margin: 0;
     display: grid;
@@ -64,34 +78,6 @@ body {
     z-index: 2;
     transition: opacity 3s;
     /* why is this not needed? */
-}
-
-#seatingArea {
-    display: grid;
-    grid-template-rows: auto auto auto auto;
-}
-
-#stepArea {
-    display: grid;
-    grid-template-columns: var(--chairWidthAllCenter) var(--chairWidthOne) var(--chairWidthAllCenter) var(--chairWidthOne) var(--chairWidthAllCenter); 
-    transform: translateY(-11.15vh);
-}
-
-.step {
-    background-color: #000000;
-    border: 1hv solid black;
-    box-sizing: border-box;
-}
-
-#walkingArea {
-}
-
-#stageArea {
-    border: rgb(0, 0, 0) solid 1vh; 
-    background-color: rgb(31, 30, 30); 
-    transform: translateY(25%);
-    z-index: 1;
-    /* why do I have to do this? */
 }
 
 #firstRow {
@@ -159,36 +145,33 @@ body {
     display:inline-block;
 }
 
-#centerRug {
-    width: 108vh;
-    height: 38vh;
-    clip-path: polygon(35% 0%, 0% 100%, 100% 100%, 65% 0%);
-    position: absolute;
-    transition: opacity 3s, visibility 3s;
+#seatingArea {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
 }
 
-#leftRug {
-    width: 162vh;
-    height: 38vh;
-    clip-path: polygon(75% 0%, 0% 100%, 65% 100%, 100.5% 0%);
-    position: absolute;
-    transform: translateX(-64%);
-    transition: opacity 3s, visibility 3s;
-
-    /* cheating - this doesn't work */
+#stepArea {
+    display: grid;
+    grid-template-columns: var(--chairWidthAllCenter) var(--chairWidthOne) var(--chairWidthAllCenter) var(--chairWidthOne) var(--chairWidthAllCenter); 
+    transform: translateY(-11.15vh);
 }
 
-#rightRug {
-    width: 162vh;
-    height: 38vh;
-    clip-path: polygon(-.5% 0%, 35% 100%, 100% 100%, 25% 0%);
-    position: absolute;
-    transform: translateX(64%);
-    transition: opacity 3s, visibility 3s;
-    /* cheating - this doesn't work */
+.step {
+    background-color: #000000;
+    border: 1hv solid black;
+    box-sizing: border-box;
 }
 
+#walkingArea {
+}
 
+#stageArea {
+    border: rgb(0, 0, 0) solid 1vh; 
+    background-color: rgb(31, 30, 30); 
+    transform: translateY(25%);
+    z-index: 1;
+    /* why do I have to do this? */
+}
 
 #screen {
     display: grid;
@@ -203,6 +186,12 @@ body {
     transform: translate(-50%, 10%); 
     /* why do I need the 100% top and 10%? */
     z-index: 2;
+}
+
+#reelContainer {
+    position: relative;
+    display: inline-block;
+    
 }
 
 #reelFigure {
@@ -225,36 +214,12 @@ body {
 
 .spinningReel {
     animation: spinReel 1.5s linear infinite;
-
 }
 
 @keyframes spinReel {
     100% {
         transform: rotate(360deg);
     }
-}
-
-#popcornFigure {
-    position: absolute; 
-    right: 15vh; 
-    top: 65vh; 
-    z-index: 3;
-    font-family:'Times New Roman', Times, serif;
-    text-align: center; 
-    font-weight: bolder; 
-    font-size: 2vh;
-    color:aliceblue
-}
-
-#popcornSVG {
-    height: 25vh; 
-    width: auto;
-}
-
-
-
-.displayOn {
-    display:
 }
 
 .lightsOff {
@@ -264,12 +229,6 @@ body {
 .hidden {
     opacity: 0;
     visibility: hidden;
-}
-
-#reelContainer {
-    position: relative;
-    display: inline-block;
-    
 }
 
 #projectorGlow {
@@ -294,4 +253,55 @@ body {
         opacity: 0.6;
         transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
     }
+}
+
+#popcornFigure {
+    position: absolute; 
+    right: 15vh; 
+    top: 65vh; 
+    z-index: 3;
+    font-family:'Times New Roman', Times, serif;
+    text-align: center; 
+    font-weight: bolder; 
+    font-size: 2vh;
+    color:aliceblue
+}
+
+#popcornSVG {
+    height: 25vh; 
+    width: auto;
+}
+
+.shake {
+    animation: shake 1s;
+    animation-iteration-count: 1.3;
+}
+
+@keyframes shake {
+    0% { transform: translateX(1px) rotate(0deg); }
+    10% { transform: translateX(-1px) rotate(-1deg); }
+    20% { transform: translateX(-3px) rotate(1deg); }
+    30% { transform: translateX(3px) rotate(0deg); }
+    40% { transform: translateX(1px) rotate(1deg); }
+    50% { transform: translateX(-1px) rotate(-1deg); }
+    60% { transform: translateX(-3px) rotate(0deg); }
+    70% { transform: translateX(3px) rotate(-1deg); }
+    80% { transform: translateX(-1px) rotate(1deg); }
+    90% { transform: translateX(1px) rotate(0deg); }
+    100% { transform: translateX(1px) rotate(-1deg); }
+}
+
+#curtain {
+    width: 40vw;
+    height: 50vh;
+    background: linear-gradient(90deg, 
+        #923232 25%, 
+        #000000 50%, 
+        #343030 60%, 
+        #982f2f 95%);
+    background-size: 1vw 100%;
+    box-shadow: 
+        inset 0 -10px 10px rgba(0, 0, 0, 0.5),
+        inset 0 20px 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
 }
