@@ -6,7 +6,7 @@
     <title>Theater</title>
     <link rel="stylesheet" href="./CSS/styles.css">
 </head>
-<body class="flexCenter">
+<body class="flexCenter" id="body">
 
     <div id="rugArea">
         <div id="centerRug" class="seatingRug"></div> 
@@ -118,18 +118,31 @@
         </div>    
     </div>
 
-    <div id="screen"></div>
+    <div id="screen">
+        <div></div>
+        <div id="displayOne" class="flexCenter"></div>
+        <div></div>
+        <div id="displayTwo" class="flexCenter" style="flex-direction: column;"></div>
+        <div></div>
+    </div>
 
-    <figure id="reelFigure">
-        <img src="reel.svg" id="reelSVG" class="spinningReel">
-        <figcaption>CLICK ME!</figcaption>
-    </figure>
+    <button id="reelButton" style="cursor: pointer">
+        <figure id="reelFigure">
+            <img src="reel.svg" id="reelSVG" alt="Reel">
+            <figcaption>SWITCH LIGHTS!</figcaption>
+        </figure>
+    </button>
 
-    <figure id="popcornFigure">
-        <img src="popcorn.svg" id="popcornSVG">
-        <figcaption>REFRESH!</figcaption>
+    <div id="reelContainer">
+        <div id="projectorGlow"></div>
+    </div>
+
+    <button id="popcornButton" style="cursor: pointer">
+        <figure id="popcornFigure">
+            <img src="popcorn.svg" id="popcornSVG">
+            <figcaption>RANDOM TOP 10!</figcaption>
+        </figure>
+    </button>
     <script src="./JS/script.js"></script>
-    </figure>
-    
 </body>
 </html>
