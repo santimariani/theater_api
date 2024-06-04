@@ -103,8 +103,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
         const title = movies[Math.floor(Math.random() * movies.length)];
         movieLookUp(title);
-
     });
+
+    // movieSearch.addEventListener('click', function (event) {
+    //     event.preventDefault();
+
+    //     curtainButton.classList.add('up');
+
 })
 
 function movieLookUp(title) {

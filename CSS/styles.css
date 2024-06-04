@@ -53,8 +53,6 @@ body {
     position: absolute;
     transform: translateX(-64%);
     transition: opacity 3s, visibility 3s;
-
-    /* cheating - this doesn't work */
 }
 
 #rightRug {
@@ -64,7 +62,6 @@ body {
     position: absolute;
     transform: translateX(64%);
     transition: opacity 3s, visibility 3s;
-    /* cheating - this doesn't work */
 }
 
 #theaterSpace {
@@ -77,7 +74,6 @@ body {
     top: 50%;
     z-index: 2;
     transition: opacity 3s;
-    /* why is this not needed? */
 }
 
 #firstRow {
@@ -292,8 +288,8 @@ body {
 }
 
 #curtain {
-    width: 40vw;
-    height: 50vh;
+    width: 100vw;
+    height: 100vh;
     background: linear-gradient(90deg, 
         #923232 25%, 
         #000000 50%, 
@@ -304,4 +300,27 @@ body {
         inset 0 -10px 10px rgba(0, 0, 0, 0.5),
         inset 0 20px 10px rgba(0, 0, 0, 0.5);
     position: absolute;
+    top: 100%;
+    z-index: 4;
+    transform: translateY(-5%);
+    transition: translateY();
+}
+
+.spinningReel {
+    animation: spinReel 1.5s linear infinite;
+}
+
+.curtainUp {
+    animation: up 2s linear ease-in;
+}
+
+@keyframes up {
+    100% {
+        transform: translate(-100%);
+    }
+}
+
+#curtainButton {
+    position: absolute;
+    z-index: 5;
 }
